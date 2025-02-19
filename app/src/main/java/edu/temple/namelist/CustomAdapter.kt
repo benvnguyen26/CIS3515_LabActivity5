@@ -6,16 +6,16 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 
-class CustomAdapter(private val names: List<String>, private val context: Context) : BaseAdapter() {
+class CustomAdapter(private val names: MutableList<String>, private val context: Context) : BaseAdapter() { // changed list to mutablelist for consistency
 
     // How many items are in the collection
     override fun getCount(): Int {
-        return 5
+        return names.size
     }
 
     // Fetch an item from the collection
     override fun getItem(p0: Int): Any {
-        return names[p0]
+        return if (names.isNotEmpty()) names[p0] else "" // Prevents crash when list is empty
     }
 
     // Get the associated ID of an item in the collection
@@ -35,5 +35,4 @@ class CustomAdapter(private val names: List<String>, private val context: Contex
         }.apply {
             text = getItem(p0).toString()
         }
-    }
-}
+    }}
