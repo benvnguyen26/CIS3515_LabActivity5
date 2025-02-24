@@ -13,7 +13,7 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
 
     lateinit var names: MutableList<String> // changed to MutableList from List
-
+//jrlloasdsadsasad
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
